@@ -1,0 +1,100 @@
+<!-- 
+Cauã Pereira da Silva - RM568143
+Felipe Estevo Santos - RM567780
+Igor Grave Teixeira - RM567663
+Renan dos Reis Santos - RM568540
+-->
+
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <title>CIFRAS-CP2</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>Cifra de Atbash</h2>
+    <p>Digite o texto para codificar ou descodificar:</p>
+
+    <input type="text" id="inputTexto" placeholder="Digite aqui...">
+
+    <button id="botaoCifrar">Executar</button>
+
+    <h3>Resultado:</h3>
+    <p id="textoResultado">...</p>
+  </div>
+
+  <hr>
+  <div class="container">
+    <h2>Cifra de César</h2>
+    <p>Digite o texto e a chave (deslocamento):</p>
+
+    <label>Mensagem:
+      <input type="text" id="inputCesar" placeholder="Digite a mensagem...">
+    </label>
+    <br><br>
+    <label>Chave:
+      <input type="number" id="chaveCesar" placeholder="Ex: 3" min="1">
+    </label>
+    <br><br>
+
+    <button id="botaoCesar">Executar</button>
+
+    <h3>Resultado:</h3>
+    <p id="resultadoCesar">...</p>
+  </div>
+
+  <hr>
+  <h2>Cifra de Vigenère</h2>
+
+  <label>Mensagem: <input type="text" id="mensagem"></label><br><br>
+  <label>Chave: <input type="text" id="chave"></label><br><br>
+  <label>Modo:
+    <select id="modo">
+      <option value="codificar">Codificar</option>
+      <option value="decodificar">Decodificar</option>
+    </select>
+  </label><br><br>
+
+  <button onclick="executarVigenere()">Executar</button>
+
+  <h3>Resultado: </h3>
+  <p id="resultado">...</p>
+
+  <hr>
+  <div class="container">
+    <h2>Cifra RSA</h2>
+    <p>Digite dois números primos (p, q) e um expoente público (e) para gerar as chaves. A mensagem deve ser um
+      **número**.</p>
+
+    <label>Primo p: <input type="number" id="rsaP" placeholder="Ex: 61"></label><br><br>
+    <label>Primo q: <input type="number" id="rsaQ" placeholder="Ex: 53"></label><br><br>
+    <label>Expoente e: <input type="number" id="rsaE" placeholder="Ex: 17"></label><br><br>
+
+    <p><strong>Chave Pública (n, e):</strong> <span id="rsaPublicKey">...</span></p>
+    <p><strong>Chave Privada (n, d):</strong> <span id="rsaPrivateKey">...</span></p>
+
+    <hr style="width:50%; margin-left:0;">
+
+    <label>Mensagem (Número): <input type="number" id="rsaMessage" placeholder="Um número < n"></label><br><br>
+
+    <label>Modo:
+      <select id="rsaMode">
+        <option value="codificar">Codificar (C = M^e mod n)</option>
+        <option value="decodificar">Decodificar (M = C^d mod n)</option>
+      </select>
+    </label><br><br>
+
+    <button id="botaoRSA">Executar RSA</button>
+
+    <h3>Resultado:</h3>
+    <p id="resultadoRSA">...</p>
+  </div>
+
+  <script src="/main.js"></script>
+</body>
+
+</html>
